@@ -55,7 +55,7 @@ html = open("https://www.marmiton.org/recettes/index/categorie/plat-principal?rc
 # 1. Parse HTML
 doc = Nokogiri::HTML(html, nil, "utf-8")
 # 2. For the first five results
-results = []
+
 doc.search(".recipe-card").first(1).each do |element|
   # 3. Create recipe and store it in results
   name = element.search(".recipe-card__title").first.text.strip
@@ -77,10 +77,19 @@ doc.search(".recipe-card").first(1).each do |element|
       # Je regarde si je connais cet ingrédient en DB
       db_ingredient = Ingredient.find_by_name(ingredient_name)
       # Si je le connais pas
+
+      html = open(URI.escape("https://www.carrefour.fr/s?q=#{ingredient_name}")).read
+      doc_price = Nokogiri::HTML(html, nil, "utf-8")
+      scrap_ingredient = doc_price.search(".ds-product-card--vertical.ds-product-card:not(.ds-product-card--shimmer)").first
+      ingredient_price = scrap_ingredient.search(".ds-title.product-card-price__price--final").first.text.strip
+        # document.querySelector(".ds-product-card--vertical.ds-product-card:not(.ds-product-card--shimmer)").querySelector(".ds-title.product-card-price__price--final")
+
+
       if !db_ingredient
         # Je le crée
         db_ingredient = Ingredient.create(
-          name: ingredient_name
+          name: ingredient_name,
+          price: ingredient_price
         )
       end
       
@@ -90,7 +99,7 @@ doc.search(".recipe-card").first(1).each do |element|
         quantity: ingredient_quantity,
         unit: ingredient_unit
       )
-      puts ri
+      p ri
     end
   end
 end
