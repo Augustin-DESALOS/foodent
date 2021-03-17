@@ -56,7 +56,7 @@ html = open("https://www.marmiton.org/recettes/index/categorie/plat-principal?rc
 doc = Nokogiri::HTML(html, nil, "utf-8")
 # 2. For the first five results
 results = []
-doc.search(".recipe-card").first(34).each do |element|
+doc.search(".recipe-card").first(1).each do |element|
   # 3. Create recipe and store it in results
   name = element.search(".recipe-card__title").first.text.strip
   recipe_url = element.search(".recipe-card-link").first.attributes["href"].value
