@@ -72,6 +72,7 @@ doc.search(".recipe-card").first(1).each do |element|
   recipe_doc.search(".ingredient-list__ingredient-group li").each do |ingredient|
     ingredient_name =  ingredient.search(".item__ingredient .ingredient-name").first.text.strip
     ingredient_quantity = ingredient.search(".item__quantity .quantity").first.text.strip
+    ingredient_unit = ingredient.search(".item__quantity .unit").first.text.strip
     if !ingredient_name.blank? 
       # Je regarde si je connais cet ingrédient en DB
       db_ingredient = Ingredient.find_by_name(ingredient_name)
@@ -86,9 +87,10 @@ doc.search(".recipe-card").first(1).each do |element|
       ri = RecipeIngredient.create(
         recipe: recipe,
         ingredient: db_ingredient,
-        quantity: ingredient_quantity
+        quantity: ingredient_quantity,
+        unit: ingredient_unit
       )
-      p ri
+      puts ri
     end
   end
 end
