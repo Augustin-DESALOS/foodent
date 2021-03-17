@@ -4,6 +4,12 @@ class PagesController < ApplicationController
   def home
   end
   def dashboard
+    @counter = 0
+    recipe_price = Recipe.last.ingredients.each do |ingredient|
+      @counter += ingredient.price
+    end
+    @counter /= 4
+
     #@price = current_user.budget
     #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7  
       #@list = 

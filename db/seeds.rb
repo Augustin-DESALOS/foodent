@@ -56,7 +56,7 @@ html = open("https://www.marmiton.org/recettes/index/categorie/plat-principal?rc
 doc = Nokogiri::HTML(html, nil, "utf-8")
 # 2. For the first five results
 
-doc.search(".recipe-card").first(1).each do |element|
+doc.search(".recipe-card").first(30).each do |element|
   # 3. Create recipe and store it in results
   name = element.search(".recipe-card__title").first.text.strip
   recipe_url = element.search(".recipe-card-link").first.attributes["href"].value
@@ -67,7 +67,7 @@ doc.search(".recipe-card").first(1).each do |element|
 
    p recipe_url
 
-  recipe_html = open(recipe_url).read
+  recipe_html = open(URI.escape(recipe_url)).read
   recipe_doc = Nokogiri::HTML(recipe_html, nil, "utf-8")
   recipe_doc.search(".ingredient-list__ingredient-group li").each do |ingredient|
     ingredient_name =  ingredient.search(".item__ingredient .ingredient-name").first.text.strip
@@ -77,11 +77,19 @@ doc.search(".recipe-card").first(1).each do |element|
       # Je regarde si je connais cet ingrédient en DB
       db_ingredient = Ingredient.find_by_name(ingredient_name)
       # Si je le connais pas
-
-      html = open(URI.escape("https://www.carrefour.fr/s?q=#{ingredient_name}")).read
+      # p ingredient_name
+      html = open(URI.escape("https://www.carrefour.fr/s?q=#{ingredient_name.parameterize}")).read
       doc_price = Nokogiri::HTML(html, nil, "utf-8")
+      p "before scrap"
       scrap_ingredient = doc_price.search(".ds-product-card--vertical.ds-product-card:not(.ds-product-card--shimmer)").first
-      ingredient_price = scrap_ingredient.search(".ds-title.product-card-price__price--final").first.text.strip
+      p "after scrap"
+      p "before price"
+      if scrap_ingredient.nil?
+        ingredient_price = 100
+      else
+        ingredient_price = (scrap_ingredient.search(".ds-title.product-card-price__price--final").first.text.strip.gsub(",", ".").to_f)*100.to_i
+      end
+      p "after scrap"
         # document.querySelector(".ds-product-card--vertical.ds-product-card:not(.ds-product-card--shimmer)").querySelector(".ds-title.product-card-price__price--final")
 
 
