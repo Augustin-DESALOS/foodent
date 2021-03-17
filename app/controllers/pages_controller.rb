@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
   end
   def dashboard
+    budget = params[:budget]
     #@price = current_user.budget
     #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7  
       #@list = 
