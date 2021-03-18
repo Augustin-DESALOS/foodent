@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
   end
   def dashboard
+    budget = params[:budget]
     @counter = 0
     recipe_price = Recipe.last.ingredients.each do |ingredient|
       @counter += ingredient.price

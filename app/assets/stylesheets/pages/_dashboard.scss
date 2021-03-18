@@ -7,22 +7,29 @@ body{
  .column img{
   height:55px;
   width: 55px;
-
-   border-radius:50%;
-   box-shadow: 1px 1px 10px black;
+  border-radius:50%;
+  &:hover {
+    box-shadow: 1px 1px 10px rgb(192, 191, 191);
+  }
 
 }
 
-
 .column {
   background-color:white;
-  box-shadow: 1px 1px 10px black;
   padding: 20px;
   border-radius:10px;
+  &:hover {
+    box-shadow: 1px 1px 10px rgb(194, 192, 192);
+  }
 }
 .day{
 margin-bottom: 10px
 }
 .price{
   margin-top:20px;
+}
+
+.title-bangers {
+  font-family: 'Bangers', cursive;
+  color: #ff6f61;
 }

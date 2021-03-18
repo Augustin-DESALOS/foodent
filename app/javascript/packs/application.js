@@ -31,4 +31,7 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  $('#range').on("input", function() {
+    $('.output').val(this.value +"€" );
+    }).trigger("change");
 });
