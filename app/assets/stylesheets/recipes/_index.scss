@@ -12,10 +12,14 @@ background:#ddd;
     box-shadow: none;
 }
 .btn{
-background-color:#ff6f61;
+background-color:red;
 border-color:#ff6f61;
+color:white;
 }
 .btn:hover{
 background-color:red;
 border-color:red;
+}
+.cards-body2 .card-body{
+background-color:#ff6f61;
 }
