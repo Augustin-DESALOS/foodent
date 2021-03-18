@@ -10,6 +10,11 @@ class PagesController < ApplicationController
       @counter += ingredient.price
     end
     @counter /= 4
+
+    # @list = Recipe.all
+    # @list
+    @list = Recipe.all.sample(14)
+
     #@price = current_user.budget
     #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7  
       #@list = 
