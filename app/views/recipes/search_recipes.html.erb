@@ -1,5 +1,4 @@
 <% @recipes.each do |recipe| %>
-<%= recipe.name %>
-<%= recipe.description %>
-<%= recipe.preparation %>
+<%= render "recipe_cards", recipe: recipe %>
 <% end %>
+
