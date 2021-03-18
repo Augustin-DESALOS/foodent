@@ -183,13 +183,13 @@ input[type="range"]::-webkit-slider-thumb {
     width: 30px;
     height: 18px;
     box-shadow: 1px 5px 10px -1px rgba(0, 0, 0,0.2),
-    -25px 0 0 10px rgba(90, 184, 6, 0.5),
-    -75px 0 0 10px rgba(90, 184, 6, 0.5),
-    -125px 0 0 10px rgba(90, 184, 6, 0.5),
-    -175px 0 0 10px rgba(90, 184, 6, 0.5),
-    -225px 0 0 10px rgba(90, 184, 6, 0.5),
-    -275px 0 0 10px rgba(90, 184, 6, 0.5),
-    -325px 0 0 10px rgba(90, 184, 6, 0.5);
+    -25px 0 0 10px #ff6f61,
+    -75px 0 0 10px #ff6f61,
+    -125px 0 0 10px #ff6f61,
+    -175px 0 0 10px #ff6f61,
+    -225px 0 0 10px #ff6f61,
+    -275px 0 0 10px #ff6f61,
+    -325px 0 0 10px #ff6f61;
   z-index:2;
 }
 input[type="range"]::-webkit-slider-thumb:after {
@@ -305,8 +305,8 @@ margin-top: -100px;
 text-align: center;
 width: 100%;
 font-size: 2em;
-font-family: 'Advent Pro', sans-serif;
-color: rgb(58, 58, 58);
+font-family: bangers;
+color: #ff6f61;
 }
 .output {
 position: absolute;
@@ -317,5 +317,32 @@ text-align: center;
 width: 100%;
 font-size: 2em;
 font-family: 'Advent Pro', sans-serif;
-color: rgba(132, 206, 66, 1);
+color: #ff6f61;
+}
+
+.home-button {
+    position: absolute;
+    top: 90%;
+    left:0;
+    margin-top: -100px;
+    text-align: center;
+    width: 100%;
+    font-size: 2em;
+    font-family: 'Advent Pro', sans-serif;
+    color: rgba(132, 206, 66, 1);
+}
+
+input {
+    color: beige;
+    padding: 5px;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    &:hover {
+        box-shadow: 1px 1px 10px rgb(194, 192, 192);
+        background-color: beige;
+        color: #ff6f61;
+        border: 2px solid #ff6f61;
+    }
 }
