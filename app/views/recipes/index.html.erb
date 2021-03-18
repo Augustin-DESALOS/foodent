@@ -23,3 +23,11 @@
                         <!--end of col-->
                     </div>
 </div>
+
+
+ <%= form_tag search_recipes_path, method: :get do %>
+                    <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control" %>
+                    <%= submit_tag "Recherche", class: "btn btn-primary" %>
+                  <% end %>
