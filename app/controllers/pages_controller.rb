@@ -4,16 +4,87 @@ class PagesController < ApplicationController
   def home
   end
   def dashboard
-    budget = params[:budget]
-    @counter = 0
-    recipe_price = Recipe.last.ingredients.each do |ingredient|
-      @counter += ingredient.price
-    end
-    @counter /= 4
+    @budget = params[:budget]
 
-    # @list = Recipe.all
-    # @list
-    @list = Recipe.all.sample(14)
+
+    # @counter = 0
+    # @list = Recipe.all.sample(14)
+    # @list.each do |recipe|
+    #   ingredients = recipe.ingredients
+    #   prices = ingredients.map { |ingredient| ingredient.price }
+    #   @counter += prices.sum
+    # end
+    # @counter /= 4
+
+    # @counter1 = 0
+    # @list1 = Recipe.all.sample(14)
+    # @list1.each do |recipe|
+    #   ingredients = recipe.ingredients
+    #   prices = ingredients.map { |ingredient| ingredient.price }
+    #   @counter1 += prices.sum
+    # end
+    # @counter1 /= 4
+
+    # @counter2 = 0
+    # @list2 = Recipe.all.sample(14)
+    # @list2.each do |recipe|
+    #   ingredients = recipe.ingredients
+    #   prices = ingredients.map { |ingredient| ingredient.price }
+    #   @counter2 += prices.sum
+    # end
+    # @counter2 /= 4
+
+    
+    all_recipes = []
+    20.times do 
+      counter = 0
+    list = Recipe.all.sample(14)
+    list.each do |recipe|
+      ingredients = recipe.ingredients
+      prices = ingredients.map { |ingredient| ingredient.price }
+      counter += prices.sum
+    end
+    counter /= 4
+    all_recipes << [list, counter]
+    end
+    @sorted_recipes = all_recipes.sort { |a,b| a[1] <=> b[1] }
+
+    @i = 0
+    @sorted_recipes.each do |recipe_list|
+      break if recipe_list[1] > (@budget.to_i)*100
+      @i += 1
+    end
+    @i
+    @array_of_lists = []
+    @array_of_lists << @sorted_recipes[@i-1]
+    @array_of_lists << @sorted_recipes[@i-2]
+    @array_of_lists << @sorted_recipes[@i-3]
+    
+  
+    # @array = []
+    # @list = Recipe.all.sample(14)
+    # @list.each do |recipe|
+    #   @array << recipe.ingredients[0].price
+    # end
+    # @array
+
+    # @array = []
+    # @array1 = []
+    # @array2 = []
+    # @counter1 = 0
+    # @list = Recipe.all.sample(14)
+    # @list.each do |recipe|
+    #   @array << recipe.ingredients
+    #   @array.each do |arr|
+    #     @array1 << arr
+    #     @array1.each do |ingred|
+    #       @array2 << ingred
+    #     end
+    #   end
+    # end
+    # @array2
+    # @counter1
+
 
     #@price = current_user.budget
     #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7  
