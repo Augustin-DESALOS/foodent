@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "shopping_list", to: "ingredients#shopping_list", as: :shopping_list
   resources :lists, only: [:create,:update]
   resources :recipes, only: [:index, :show]
+  get 'recipes_search', to: 'recipes#search_recipes', as: :search_recipes
 end
