@@ -522,10 +522,6 @@ input {
     padding-top: 100px;
 }
 
-span {
-    color: dimgray;
-}
-
 .pop-up {
     position: fixed;
     margin: 5% auto;
@@ -545,12 +541,6 @@ span {
     -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
     box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
     border-radius: 60px;
-}
-
-.button {
-    margin: 0 auto;
-    background-color: #FF8566;
-    margin-bottom: 33px;
 }
 
 .button:hover {
@@ -591,12 +581,6 @@ h3 {
     font-size: 40px;
 }
 
-p {
-    padding: 20px 65px 10px 65px;
-    color: dimgray;
-}
-
-h1 {
-    color: dimgray;
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+.poptext {
+    padding: 30px;
 }
