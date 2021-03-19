@@ -9,4 +9,16 @@
     </div>
   </form>
   <output for="range" class="output"></output>
+
+<% unless current_user  %>
+  <div class="row pop-up">
+    <div class="box small-6 large-centered">
+      <a href="#" class="close-button">&#10006;</a>
+      <h3>Hello</h3>
+      <p>Welcome to foodent, the food app for students</p>
+      <p>The concept is simple, you enter your food budget for the week and the app will offer you several lists of complete meals for a period of 7 days.</p>
+      <p>If you like a list, just register to add it to your profile, see you next week!</p>
+    </div>
+  </div>
+<% end %>
 </div>
