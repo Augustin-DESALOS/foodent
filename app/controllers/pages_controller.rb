@@ -59,7 +59,29 @@ class PagesController < ApplicationController
     @array_of_lists << @sorted_recipes[@i-1]
     @array_of_lists << @sorted_recipes[@i-2]
     @array_of_lists << @sorted_recipes[@i-3]
+
+    # @price_list_1 = 0
+    # @sorted_recipes[@i-1][0].each do |recipe|
+    #   ingredients = recipe.ingredients
+    #   prices = ingredients.map { |ingredient| ingredient.price }
+    #   @price_list_1 += prices.sum
+    # end
+    # @price_list_1 /= 4
     
+
+
+    # @array_price_list = []
+    # @list_price = 0
+    # @array_of_lists.each do |list|
+    #   recipes = list.recipes
+    #   recipes.each do |recipe|
+    #     ingredients = recipe.ingredients
+    #     prices = ingredients.map { |ingredient| ingredient.price }
+    #     @list_price += prices.sum
+    #   end
+    #   @list_price /= 4
+    #   @array_price_list << @list_price
+    # end
   
     # @array = []
     # @list = Recipe.all.sample(14)
