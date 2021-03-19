@@ -41,7 +41,6 @@ html, body {
    margin: 20px auto;
    .header {
       background-size: cover;
-      min-height: 350px;
 
       }
    .text {
@@ -88,6 +87,6 @@ html, body {
    }
 }
 .header img{
-   height: 370px;
-   width:395px;
+   // height: 370px;
+   width:100%;
 }
