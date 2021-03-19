@@ -6,6 +6,10 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    # @array_eric
+    # @listeric = Recipe.all.each do |recipe|
+    #   @array_eric << recipe.ingredients
+    # end
   end
 
   def search_recipes
