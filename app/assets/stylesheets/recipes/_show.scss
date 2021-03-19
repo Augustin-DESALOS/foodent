@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 // VARIABLES
-$food: url("http://marineiscooking.com/wp-content/uploads/2019/03/gateau-au-chocolat-grand-mere-490x375.jpg") no-repeat center;
 
 // FONT
 $font: 'Roboto', sans-serif;
@@ -41,7 +40,6 @@ html, body {
    max-width: 400px;
    margin: 20px auto;
    .header {
-      background: $food;
       background-size: cover;
       min-height: 350px;
 
@@ -88,4 +86,8 @@ html, body {
          background-color:red;
       }
    }
+}
+.header img{
+   height: 370px;
+   width:395px;
 }
