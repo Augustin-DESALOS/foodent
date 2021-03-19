@@ -60,6 +60,23 @@ class PagesController < ApplicationController
     @array_of_lists << @sorted_recipes[@i-2]
     @array_of_lists << @sorted_recipes[@i-3]
 
+    @pictures = []
+    @sorted_recipes[@i-1][0].each do |recipe|
+      # @pictures << recipe.picture
+      @pictures << recipe.picture
+    end
+
+     @pictures1 = []
+    @sorted_recipes[@i-2][0].each do |recipe|
+      # @pictures << recipe.picture
+      @pictures1 << recipe.picture
+    end
+
+    @pictures2 = []
+    @sorted_recipes[@i-3][0].each do |recipe|
+      # @pictures << recipe.picture
+      @pictures2 << recipe.picture
+    end
     # @price_list_1 = 0
     # @sorted_recipes[@i-1][0].each do |recipe|
     #   ingredients = recipe.ingredients

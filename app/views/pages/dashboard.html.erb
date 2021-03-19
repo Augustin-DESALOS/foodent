@@ -8,62 +8,62 @@
       <div class="day d-flex align-items-center" >
         <%=image_tag("boldecereales.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[0]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[1]) %>
         <p class="ml-2 mb-0">LUN</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("petitprince.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[2]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[3]) %>
         <p class="ml-2 mb-0">MAR</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("cafew.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[4]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[5]) %>
         <p class="ml-2 mb-0">MER</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("tartinedesavoie.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[6]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[7]) %>
         <p class="ml-2 mb-0">JEU</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("kingbreakfast.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[8]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[9]) %>
         <p class="ml-2 mb-0">VEN</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("pancakenutella.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[10]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[11]) %>
         <p class="ml-2 mb-0">SAM</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("veganbreakfast.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[12]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures[13]) %>
         <p class="ml-2 mb-0">DIM</p>
       </div>
       <div class="d-flex justify-content-between mt-3 align-items-center">
-        <p class="price my-0">PRIX:<%= @sorted_recipes[@i-1][1] %></p>
-        <div class="btn btn-primary"><p class="mb-0">Ajt list</p></div>
+        <p class="price my-0">PRIX: <%= @sorted_recipes[@i-1][1]/100.to_f %><%= "€" %></p>
+        <div class="btn btn-primary"><p class="mb-0">Sélectionner</p></div>
       </div>
     </div>
   </div>
@@ -77,62 +77,62 @@
       <div class="day d-flex align-items-center" >
         <%=image_tag("pancakenutella.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[0]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[1]) %>
         <p class="ml-2 mb-0">LUN</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("kingbreakfast.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[2]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[3]) %>
         <p class="ml-2 mb-0">MAR</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("tartinedesavoie.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[4]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[5]) %>
         <p class="ml-2 mb-0">MER</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("boldecereales.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[6]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[7]) %>
         <p class="ml-2 mb-0">JEU</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("veganbreakfast") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[8]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[9]) %>
         <p class="ml-2 mb-0">VEN</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("petitprince.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[10]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[11]) %>
         <p class="ml-2 mb-0">SAM</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("cafew.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[12]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures1[13]) %>
         <p class="ml-2 mb-0">DIM</p>
       </div>
       <div class="d-flex justify-content-between mt-3 align-items-center">
-        <p class="price my-0">PRIX:<%= @sorted_recipes[@i-2][1] %></p>
-        <div class="btn btn-primary"><p class="mb-0">Ajt list</p></div>
+        <p class="price my-0">PRIX: <%= @sorted_recipes[@i-2][1]/100.to_f %><%= "€" %></p>
+        <div class="btn btn-primary"><p class="mb-0">Sélectionner</p></div>
       </div>
     </div>
   </div>
@@ -146,66 +146,63 @@
       <div class="day d-flex align-items-center" >
         <%=image_tag("tartinedesavoie.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[0]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[1]) %>
         <p class="ml-2 mb-0">LUN</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("veganbreakfast") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[2]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[3]) %>
         <p class="ml-2 mb-0">MAR</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("petitprince.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[4]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[5]) %>
         <p class="ml-2 mb-0">MER</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("pancakenutella.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[6]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[7]) %>
         <p class="ml-2 mb-0">JEU</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("cafew.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[8]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[9]) %>
         <p class="ml-2 mb-0">VEN</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("kingbreakfast.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[10]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[11]) %>
         <p class="ml-2 mb-0">SAM</p>
       </div>
       <div class="day d-flex align-items-center" >
         <%=image_tag("boldecereales.jpg") %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[12]) %>
         <p class="mx-2 mb-0">+</p>
-        <%=image_tag("fruits logo.png") %>
+        <%=image_tag(@pictures2[13]) %>
         <p class="ml-2 mb-0">DIM</p>
       </div>
       <div class="d-flex justify-content-between mt-3 align-items-center">
-        <p class="price my-0">PRIX:<%= @sorted_recipes[@i-3][1] %></p>
-        <div class="btn btn-primary"><p class="mb-0">Ajt list</p></div>
+        <p class="price my-0">PRIX: <%= @sorted_recipes[@i-3][1]/100.to_f %><%= "€" %></p>
+        <div class="btn btn-primary"><p class="mb-0">Sélectionner</p></div>
       </div>
     </div>
   </div>
 </div>
-
-<%# <%= @sorted_recipes[@i-1][1] %>
-
