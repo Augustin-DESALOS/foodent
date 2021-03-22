@@ -112,6 +112,22 @@ class PagesController < ApplicationController
       end
     end
 
+
+    def save_list
+      recipe_list = params[:recipes]
+      new_list = List.create(user_id: current_user.id)
+      recipe_list.each do |recipe|
+        ListRecipe.create!(list_id: new_list.id, recipe_id: recipe.to_i)
+      end
+      redirect_to my_list_path
+    end
+
+    def my_list
+      @list = current_user.lists.last
+      @recipes = @list.recipes
+    end
+
+
     # @pictures2 = []
     # @sorted_recipes[@i-3][0].each do |recipe|
     #   # @pictures << recipe.picture

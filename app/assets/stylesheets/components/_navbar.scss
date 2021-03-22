@@ -7,13 +7,18 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon .navbar-brand h1 {
   width: 40px;
-  border-radius: 50%;
+  font-family: bangers;
+  color: antiquewhite;
 }
 .modal, .fade, .show{
   background-color:#ff6f61;
 }
 .dropdown-menu{
   margin-top:30%;
+}
+
+.navbar-light .navbar-nav .nav-search {
+  color: antiquewhite;
 }
