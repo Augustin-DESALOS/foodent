@@ -1,26 +1,26 @@
-<div class="card">
-  <div class="header">
+<div class="card-show">
+   <div class="header">
     <%= image_tag(@recipe.picture) %>
-    <div class="icon">
+      <div class="icon">
+      </div>
+   </div>
+   <div class="text">
+      <h1 class="food">
+         <%= @recipe.name %>
+      </h1>
+         <i class="fa fa-clock-o"> <%= @recipe.cooking_time %></i>
+      <div class="stars">
+         <% @recipe.rating.to_i.times do  %>
+            <i class="fas fa-heart"></i>
+         <% end %>
+      </div>
+      <p><strong>Description:</strong></p>
+        <%= @recipe.description %>
+      <p class="info"><strong>Ingredient:</strong>
+      <br>
+        <% @recipe.ingredients.each do |i| %>
+            <%= i.name %>,
+        <% end %></p>
+   </div>
+      <a href="#" class="btn">Add to list</a>
     </div>
-  </div>
-  <div class="text">
-    <h1 class="food">
-    <%= @recipe.name %>
-    </h1>
-    <i class="fa fa-clock-o"> <%= @recipe.cooking_time %></i>
-    <div class="stars">
-      <li>
-        <a href="#"><i class="fa fa-star"></i></a>
-        <a href="#"><i class="fa fa-star"></i></a>
-        <a href="#"><i class="fa fa-star"></i></a>
-        <a href="#"><i class="fa fa-star"></i></a>
-        <a href="#"><i class="fa fa-star-o"></i></a>
-      </li>
-    </div>
-    <p class="info">Ingredient:
-    <%= @recipe.ingredients.name %></p>
-  </div>
-
-<%= link_to "Add to list", shopping_list_path, class: "btn" %>
-</div>
