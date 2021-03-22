@@ -60,7 +60,6 @@ doc.search(".recipe-card").first(30).each do |element|
   # 3. Create recipe and store it in results
   name = element.search(".recipe-card__title").first.text.strip
   recipe_url = element.search(".recipe-card-link").first.attributes["href"].value
-  
   rating = element.search(".recipe-card__rating__value").first.text.strip
   prep_time = element.search(".recipe-card__duration__value").first.text.strip
   
@@ -73,11 +72,12 @@ doc.search(".recipe-card").first(30).each do |element|
   p picture = recipe_doc.search("#recipe-picture-print").first.attributes["src"].value
   recipe = Recipe.create(name: name, description: description, picture: picture, rating: rating, cooking_time: prep_time)
   recipe_url
-
+  
   recipe_doc.search(".ingredient-list__ingredient-group li").each do |ingredient|
     ingredient_name =  ingredient.search(".item__ingredient .ingredient-name").first.text.strip
     ingredient_quantity = ingredient.search(".item__quantity .quantity").first.text.strip
     ingredient_unit = ingredient.search(".item__quantity .unit").first.text.strip
+    description = ingredient.search(".recipe-step-list").first.text.strip
     if !ingredient_name.blank?
       # Je regarde si je connais cet ingrédient en DB
       db_ingredient = Ingredient.find_by_name(ingredient_name)
