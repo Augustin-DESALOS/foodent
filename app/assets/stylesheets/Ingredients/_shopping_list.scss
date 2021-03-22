@@ -1,6 +1,6 @@
 // body{
 //     margin-top:20px;
-//     background: #f8f8f8;
+//     background: #ff6f61;
 // }
 
 .todo-nav {
@@ -91,14 +91,9 @@ div.button, div.checker, div.radio, div.selector, div.uploader {
     vertical-align: middle;
 }
 
-// .card {
-//     padding: 25px;
-//     margin-bottom: 20px;
-//     border: initial;
-//     background: #fff;
-//     border-radius: calc(.15rem - 1px);
-//     box-shadow: 0 1px 15px rgba(0,0,0,0.04), 0 1px 6px rgba(0,0,0,0.04);
-// }
+.card {
+    margin-top:30px;
+}
 .ingredient-check{
   text-decoration-line: line-through;
 }

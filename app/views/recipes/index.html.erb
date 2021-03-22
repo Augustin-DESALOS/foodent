@@ -3,9 +3,9 @@
 <div class="searchbarcool">
   <%= form_tag search_recipes_path, method: :get do %>
   <%= text_field_tag :query,
-    params[:query], placeholder: 'search recipes',
+    params[:query], placeholder: 'Rechercher une recette',
     class: "form-control form-control-lg form-control-borderless" %>
-  <%= submit_tag "Search", class: "btn btn-lg btn-succes" %>
+  <%= submit_tag "Rechercher", class: "btn btn-lg btn-succes" %>
   <% end %>
 </div>
 
