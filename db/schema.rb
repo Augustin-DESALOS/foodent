@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_112824) do
     t.text "preparation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "breakfast", default: false
   end
 
   create_table "users", force: :cascade do |t|
