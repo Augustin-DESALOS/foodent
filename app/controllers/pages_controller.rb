@@ -35,15 +35,25 @@ class PagesController < ApplicationController
     # @counter2 /= 4
 
     
+    # all_recipes = []
+    # 20.times do 
+    #   counter = 0
+    # list = Recipe.all.sample(14)
+    # list.each do |recipe|
+    #   ingredients = recipe.ingredients
+    #   prices = ingredients.map { |ingredient| ingredient.price }
+    #   counter += prices.sum
+    # end
     all_recipes = []
-    20.times do 
+    20.times do
       counter = 0
-    list = Recipe.all.sample(14)
-    list.each do |recipe|
-      ingredients = recipe.ingredients
-      prices = ingredients.map { |ingredient| ingredient.price }
-      counter += prices.sum
-    end
+      list = Recipe.where(breakfast: false).sample(14)
+      list += Recipe.where(breakfast: true).sample(7)
+      list.each do |recipe|
+        ingredients = recipe.ingredients
+        prices = ingredients.map { |ingredient| ingredient.price }
+        counter += prices.sum
+      end
     counter /= 4
     all_recipes << [list, counter]
     end
@@ -60,23 +70,55 @@ class PagesController < ApplicationController
     @array_of_lists << @sorted_recipes[@i-2]
     @array_of_lists << @sorted_recipes[@i-3]
 
+    # @pictures = []
+    # @sorted_recipes[@i-1][0].each do |recipe|
+    #   # @pictures << recipe.picture
+    #   @pictures << recipe.picture
+    # end
+
     @pictures = []
+    @breakfast_pictures = []
     @sorted_recipes[@i-1][0].each do |recipe|
-      # @pictures << recipe.picture
-      @pictures << recipe.picture
+      if recipe.breakfast == true
+        @breakfast_pictures << recipe.picture
+      else
+        @pictures << recipe.picture
+      end
     end
 
-     @pictures1 = []
+    @pictures1 = []
+    @breakfast_pictures1 = []
     @sorted_recipes[@i-2][0].each do |recipe|
-      # @pictures << recipe.picture
-      @pictures1 << recipe.picture
+      if recipe.breakfast == true
+        @breakfast_pictures1 << recipe.picture
+      else
+        @pictures1 << recipe.picture
+      end
     end
+
+    #  @pictures1 = []
+    # @sorted_recipes[@i-2][0].each do |recipe|
+    #   # @pictures << recipe.picture
+    #   @pictures1 << recipe.picture
+    # end
 
     @pictures2 = []
+    @breakfast_pictures2 = []
     @sorted_recipes[@i-3][0].each do |recipe|
-      # @pictures << recipe.picture
-      @pictures2 << recipe.picture
+      if recipe.breakfast == true
+        @breakfast_pictures2 << recipe.picture
+      else
+        @pictures2 << recipe.picture
+      end
     end
+
+    # @pictures2 = []
+    # @sorted_recipes[@i-3][0].each do |recipe|
+    #   # @pictures << recipe.picture
+    #   @pictures2 << recipe.picture
+    # end
+
+
     # @price_list_1 = 0
     # @sorted_recipes[@i-1][0].each do |recipe|
     #   ingredients = recipe.ingredients
