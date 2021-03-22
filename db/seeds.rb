@@ -65,7 +65,9 @@ doc.search(".recipe-card").first(30).each do |element|
   
   recipe_html = open(URI.escape(recipe_url)).read
   recipe_doc = Nokogiri::HTML(recipe_html, nil, "utf-8")
-  
+
+  description = recipe_doc.search(".recipe-step-list").first.text.strip
+
   # recherche de la photo pour chaque recettes ici :
   p picture = recipe_doc.search("#recipe-picture-print").first.attributes["src"].value
   recipe = Recipe.create(name: name, description: description, picture: picture, rating: rating, cooking_time: prep_time)
