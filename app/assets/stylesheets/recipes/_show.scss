@@ -34,11 +34,12 @@ html, body {
 }
 
 
-.card {
+.card-show {
    position: relative;
    background: $white;
    max-width: 400px;
-   margin: 20px auto;
+   margin: 40px auto;
+   border-radius: 50px;
    .header {
       background-size: cover;
 
@@ -46,10 +47,9 @@ html, body {
    .text {
       .food {
          color: $black;
-         text-align: left;
+         text-align: center;
          font-weight: normal;
          text-transform: uppercase;
-         letter-spacing: 0.1em;
          margin: 5px 30px;
       }
       .fa-clock-o {
@@ -62,23 +62,26 @@ html, body {
    }
    .stars {
       margin: 10px 30px;
-      li a i {
-         color: $star;
-      }
+      color: red;
    }
    .info {
       margin: 10px 30px;
+      padding-bottom: 30px;
    }
    a.btn {
       display: block;
       background: $button;
       color: $white;
-      position: relative;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 100%;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       text-align: center;
       padding: 10px;
       transition: 250ms;
+      width: 50%;
       &:hover {
          background: $heart;
          transition: 250ms;
@@ -89,4 +92,38 @@ html, body {
 .header img{
    // height: 370px;
    width:100%;
+}
+
+.card-index-wow {
+   display: flex;
+   flex-direction: column;
+   margin: 15px;
+}
+
+.super-image-de-gros-mangeur {
+   width: 40vh;
+   height: 30vh;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   border-radius: 20px 20px 0px 0px;
+}
+
+.title-rating-bonheur {
+   width: 40vh;
+   padding-top: 20px;
+   background-color: white;
+   height: 30%;
+   border-radius: 0px 0px 20px 20px;
+}
+
+.sans-nom {
+   margin-top: 10px;
+}
+
+.center-parc {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
