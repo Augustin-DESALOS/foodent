@@ -3,6 +3,8 @@
 }
 body{
   background-color:beige;
+  background-image: url("https://www.amifood.be/wp-content/uploads/2017/04/image-6.jpg");
+  background-attachment: fixed;
 }
  .column img{
   height:55px;
@@ -31,5 +33,5 @@ margin-bottom: 10px
 
 .title-bangers {
   font-family: 'Bangers', cursive;
-  color: #ff6f61;
+  color: white;
 }
