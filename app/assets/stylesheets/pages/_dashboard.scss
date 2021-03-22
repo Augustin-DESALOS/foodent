@@ -33,5 +33,10 @@ margin-bottom: 10px
 
 .title-bangers {
   font-family: 'Bangers', cursive;
-  color: white;
+  color: antiquewhite;
+  text-shadow:
+  #ff6f61 1px 1px 1px,
+  #ff6f61 -1px 1px 1px,
+  #ff6f61 -1px -1px 1px,
+  #ff6f61 1px -1px 1px;
 }
