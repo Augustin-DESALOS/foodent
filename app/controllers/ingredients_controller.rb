@@ -5,5 +5,6 @@ class IngredientsController < ApplicationController
     # @recipes.each do |recipe|
     #   @ingredients << recipe.recipe_ingredients
     # end
+    @recipes = Recipe.where(user: current_user)
   end
 end
