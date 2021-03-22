@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+// require("channels/shopping_list")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,11 +24,12 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
+import {initShoppingList} from '../plugins/shopping_list'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initShoppingList();
   // Call your functions here, e.g:
   // initSelect2();
   $('#range').on("input", function() {
@@ -40,14 +41,14 @@ document.addEventListener('turbolinks:load', () => {
   $(function() {
     $('.pop-up').hide();
     $('.pop-up').fadeIn(1000);
-    
-        $('.close-button').click(function (e) { 
-  
+
+        $('.close-button').click(function (e) {
+
         $('.pop-up').fadeOut(700);
         $('#overlay').removeClass('blur-in');
         $('#overlay').addClass('blur-out');
         e.stopPropagation();
-          
+
       });
-    });  
+    });
 });
