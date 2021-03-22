@@ -36,3 +36,7 @@ wordPress.addEventListener("click", () => {
   wordPresslabel.classList.toggle('ingredient-check');
 });
 </script>
+
+<%= @ingredients.each do |ingredient| %>
+<%= ingredient.name %>
+<% end %>
