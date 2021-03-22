@@ -1,26 +1,24 @@
 <div class="container">
-  <p class="budget">Budget / week</p>
+  <p class="budget">Budget semaine</p>
   <form action="dashboard" method="get">
   <label for="range">
-    <input type="range" name="budget" id="range" min="15" max="300" step="5" value="175"/>
+    <input type="range" name="budget" id="range" min="15" max="100" step="5" value="175"/>
   </label>
     <div class="home-button">
-      <input type="submit" value="Submit">
+      <input type="submit" value="GO">
     </div>
   </form>
   <output for="range" class="output"></output>
 
-<% unless current_user  %>
-  <div class="row pop-up">
-    <div class="box small-6 large-centered">
-      <a href="#" class="close-button">&#10006;</a>
-      <h3>Hello</h3>
-      <div class="poptext">
-        <p>Welcome to foodent, the food app for students</p>
-        <p>The concept is simple, you enter your food budget for the week and the app will offer you several lists of complete meals for a period of 7 days.</p>
-        <p>If you like a list, just register to add it to your profile, see you next week!</p>
-      </div>
+<div class="row pop-up">
+  <div class="box small-6 large-centered">
+    <a href="#" class="close-button">&#10006;</a>
+    <h3>Bonjour !</h3>
+    <div class="poptext">
+      <p>Bienvenue dans Foodent, l'application alimentaire pour les étudiants</p>
+      <p>Le concept est simple, vous saisissez votre budget alimentaire pour la semaine et l'appli vous proposera plusieurs listes de repas complets pour une période de 7 jours</p>
+      <p>Si vous aimez une liste, inscrivez-vous simplement pour l'ajouter à votre profil</p>
     </div>
   </div>
-<% end %>
+</div>
 </div>
