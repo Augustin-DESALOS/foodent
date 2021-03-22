@@ -8,24 +8,14 @@
                     </ul>
                     <div class="todo-list">
                         <div class="todo-item">
-                            <div class="checker"><span class=""><input type="checkbox"></span></div>
-                            <span>Create theme</span>
-                            <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                        </div>
-                        <div class="todo-item">
-                            <div class="checker"><span class=""><input type="checkbox"></span></div>
-                            <span>Work on wordpress</span>
-                            <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                        </div>
+                            <div class="checker"><input id= "1" type="checkbox"></div>
 
-                        <div class="todo-item">
-                            <div class="checker"><span class=""><input type="checkbox"></span></div>
-                            <span>Organize office main department</span>
+                            <span id= "3" >Create theme</span>
                             <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
                         </div>
                         <div class="todo-item">
-                            <div class="checker"><span><input type="checkbox"></span></div>
-                            <span>Error solve in HTML template</span>
+                            <div class="checker"><input id= "2" type="checkbox"></div>
+                            <span id= "4">Work on wordpress</span>
                             <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
                         </div>
                     </div>
@@ -34,3 +24,15 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+const createTheme = document.getElementById('1');
+const wordPress = document.getElementById('2');
+const createThemelabel = document.getElementById('3');
+const wordPresslabel = document.getElementById('4');
+createTheme.addEventListener("click", () => {
+  createThemelabel.classList.toggle('ingredient-check');
+});
+wordPress.addEventListener("click", () => {
+  wordPresslabel.classList.toggle('ingredient-check');
+});
+</script>
