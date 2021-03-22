@@ -38,7 +38,7 @@ html, body {
    position: relative;
    background: $white;
    max-width: 400px;
-   margin: 40px auto;
+   margin: 0px auto;
    border-radius: 50px;
    .header {
       background-size: cover;
@@ -98,6 +98,7 @@ html, body {
    display: flex;
    flex-direction: column;
    margin: 15px;
+   align-items: center;
 }
 
 .super-image-de-gros-mangeur {

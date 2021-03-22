@@ -15,7 +15,7 @@
          <% end %>
       </div>
       <p><strong>Description:</strong></p>
-        <%= @recipe.description %>
+        <p style="white-space: pre-line;"><%= @recipe.description %></p>
       <p class="info"><strong>Ingredient:</strong>
       <br>
         <% @recipe.ingredients.each do |i| %>
