@@ -6,17 +6,19 @@ class IngredientsController < ApplicationController
     #   @ingredients << recipe.recipe_ingredients
     # end
     # @recipes = Recipe.where(user: current_user)
-    @list = current_user.lists.last
+    # @list = current_user.lists.last
+    @list = List.find(params[:id])
+    @list_ingredients = @list.list_ingredients
+  end
+  def create_list_ingredients
+    @list = List.find(params[:id])
     @recipes = @list.recipes
     @ingredients = @recipes.map {|recipe| recipe.ingredients}.flatten
-  end
-  def update
-    @ingredient = Ingredient.find(params[:id])
-    @ingredient.update(ingredient_params)
-  end
-        private
-
-def ingredient_params
-  params.require(:ingredient).permit(:checked)
+    @list_ingredients = []
+    @ingredients.each do |ingredient|
+      list_ingredient = ListIngredient.create(list: @list, ingredient: ingredient, checked: false)
+      @list_ingredients << list_ingredient
+    end
+    redirect_to shopping_list_path(@list)
   end
 end
