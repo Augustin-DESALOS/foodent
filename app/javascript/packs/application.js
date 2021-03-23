@@ -35,7 +35,14 @@ document.addEventListener('turbolinks:load', () => {
   $('#range').on("input", function() {
     $('.output').val(this.value +"€" );
     }).trigger("change");
-
+  
+    const dailist = document.querySelectorAll(".dayli-list");
+    dailist.forEach(list => {
+      list.addEventListener("click", event => {
+      console.log("coucou")
+      list.classList.toggle("active");
+      })
+    })
 
 // Need to stay the last script !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Write your code up stair
   $(function() {
