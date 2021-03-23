@@ -6,7 +6,8 @@ class IngredientsController < ApplicationController
     #   @ingredients << recipe.recipe_ingredients
     # end
     # @recipes = Recipe.where(user: current_user)
-    @list = current_user.lists.last
+    # @list = current_user.lists.last
+    @list = List.find(params[:id])
     @recipes = @list.recipes
     @ingredients = @recipes.map {|recipe| recipe.ingredients}.flatten
   end

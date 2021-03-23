@@ -34,9 +34,9 @@ class PagesController < ApplicationController
     # end
     # @counter2 /= 4
 
-    
+
     # all_recipes = []
-    # 20.times do 
+    # 20.times do
     #   counter = 0
     # list = Recipe.all.sample(14)
     # list.each do |recipe|
@@ -158,7 +158,7 @@ class PagesController < ApplicationController
     #   @price_list_1 += prices.sum
     # end
     # @price_list_1 /= 4
-    
+
 
 
     # @array_price_list = []
@@ -173,7 +173,7 @@ class PagesController < ApplicationController
     #   @list_price /= 4
     #   @array_price_list << @list_price
     # end
-  
+
     # @array = []
     # @list = Recipe.all.sample(14)
     # @list.each do |recipe|
@@ -200,8 +200,8 @@ class PagesController < ApplicationController
 
 
     #@price = current_user.budget
-    #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7  
-      #@list = 
+    #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7
+      #@list =
       #@list =
       #@list =
     #else
