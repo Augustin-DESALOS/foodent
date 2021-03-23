@@ -123,8 +123,24 @@ class PagesController < ApplicationController
     end
 
     def my_list
-      @list = current_user.lists.last
-      @recipes = @list.recipes
+      @chosen_list = current_user.lists.last
+      @chosen_recipes = @chosen_list.recipes
+      @chosen_breakfast = []
+      @chosen_pictures = []
+      @chosen_recipes.each do |recipe|
+        if recipe.breakfast == true
+          @chosen_breakfast << recipe.picture
+        else
+          @chosen_pictures << recipe.picture
+        end
+      end
+      @chosen_counter = 0
+      @chosen_recipes.each do |recipe|
+        ingredients = recipe.ingredients
+        prices = ingredients.map { |ingredient| ingredient.price }
+        @chosen_counter += prices.sum
+      end
+      @chosen_counter /= 4
     end
 
 
