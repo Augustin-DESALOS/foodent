@@ -46,6 +46,7 @@ require 'json'
 require 'open-uri'
 require "nokogiri"
 
+ListRecipe.destroy_all
 RecipeIngredient.destroy_all
 Ingredient.destroy_all
 Recipe.destroy_all
@@ -56,7 +57,7 @@ html = open("https://www.marmiton.org/recettes/index/categorie/plat-principal?rc
 doc = Nokogiri::HTML(html, nil, "utf-8")
 # 2. For the first five results
 
-doc.search(".recipe-card").first(30).each do |element|
+doc.search(".recipe-card").first(60).each do |element|
   # 3. Create recipe and store it in results
   name = element.search(".recipe-card__title").first.text.strip
   recipe_url = element.search(".recipe-card-link").first.attributes["href"].value
@@ -77,7 +78,6 @@ doc.search(".recipe-card").first(30).each do |element|
     ingredient_name =  ingredient.search(".item__ingredient .ingredient-name").first.text.strip
     ingredient_quantity = ingredient.search(".item__quantity .quantity").first.text.strip
     ingredient_unit = ingredient.search(".item__quantity .unit").first.text.strip
-    description = ingredient.search(".recipe-step-list").first.text.strip
     if !ingredient_name.blank?
       # Je regarde si je connais cet ingrédient en DB
       db_ingredient = Ingredient.find_by_name(ingredient_name)
@@ -102,6 +102,7 @@ doc.search(".recipe-card").first(30).each do |element|
         db_ingredient = Ingredient.create(
           name: ingredient_name,
           price: ingredient_price
+          # price: ( ingredient_price / rand(1..2) )
         )
       end
       
@@ -150,7 +151,7 @@ recipetartinedesavoie2 = RecipeIngredient.create(recipe: tartinedesavoie, ingred
 recipetartinedesavoie3 = RecipeIngredient.create(recipe: tartinedesavoie, ingredient: confituredefraise, quantity: "20", unit: "gr")
 recipetartinedesavoie4 = RecipeIngredient.create(recipe: tartinedesavoie, ingredient: pain, quantity: "100", unit: "gr")
 
-kingbreakfast = Recipe.create(name: "Le repas des rois", description: "Inspirez profondément et expirez doucement, répétez cette technique 3 fois et ... c'est bon vous n'avez plus faim ! Bonne journée !!!", picture: "kingbreakfast.jpg", rating: 0, cooking_time: "0 sec", breakfast: true)
+kingbreakfast = Recipe.create(name: "Le repas des rois", description: "Inspirez profondément et expirez doucement, répétez cette technique 3 fois et ... c'est bon vous n'avez plus faim ! Bonne journée !!!", picture: "kingbreakfast.jpg", rating: 1, cooking_time: "2 min", breakfast: true)
 seum = Ingredient.create(name: "Du seum", price: 0)
 recipekingbreakfast = RecipeIngredient.create(recipe: kingbreakfast, ingredient: seum, quantity: "3", unit: "co2")
 
