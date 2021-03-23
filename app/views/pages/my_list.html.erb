@@ -59,7 +59,7 @@
       </div>
       <div class="d-flex justify-content-between mt-3 align-items-center">
         <p class="price my-0">PRIX: <%= @chosen_counter/100.to_f %><%= "€" %></p>
-         <%= link_to "liste de courses", shopping_list_path(@chosen_list) %>
+         <%= link_to "liste de courses", create_list_ingredients_path(@chosen_list) %>
       </div>
     </div>
   </div>
