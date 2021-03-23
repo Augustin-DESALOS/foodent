@@ -1,42 +1,46 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card card-white">
-                <div class="card-body">
-                    <ul class="nav nav-pills todo-nav">
-                      <h1>liste de courses</h1>
-                    </ul>
-                    <div class="todo-list">
-                        <div class="todo-item">
-                            <div class="checker"><input id= "1" type="checkbox"></div>
-
-                            <span id= "3" >Create theme</span>
-                            <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                        </div>
-                        <div class="todo-item">
-                            <div class="checker"><input id= "2" type="checkbox"></div>
-                            <span id= "4">Work on wordpress</span>
-                            <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                        </div>
-                    </div>
-                </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-white">
+        <div class="card-body">
+          <ul class="nav nav-pills todo-nav">
+            <h1>liste de courses</h1>
+          </ul>
+          <div class="todo-list">
+            <div class="todo-item">
+              <div class="checker"><input id= "1" type="checkbox"></div>
+              <span id= "3" >Create theme</span>
+              <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
             </div>
+            <div class="todo-item">
+              <div class="checker"><input id= "2" type="checkbox"></div>
+              <span id= "4">Work on wordpress</span>
+              <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
+<%= @recipes.size %>
+<%= @ingredients.each do |ingredient| %>
+<%= simple_form_for(ingredient) do |f| %>
+<%= f.input :checked,
+input_html: {class: "ingredient-input checker"},
+label_html: {id: "ingredient-<%= ingredient.id %>"} %>
+<% end %>
+<% end %>
 <script type="text/javascript">
 const createTheme = document.getElementById('1');
 const wordPress = document.getElementById('2');
 const createThemelabel = document.getElementById('3');
 const wordPresslabel = document.getElementById('4');
 createTheme.addEventListener("click", () => {
-  createThemelabel.classList.toggle('ingredient-check');
+createThemelabel.classList.toggle('ingredient-check');
 });
 wordPress.addEventListener("click", () => {
-  wordPresslabel.classList.toggle('ingredient-check');
+wordPresslabel.classList.toggle('ingredient-check');
 });
 </script>
-
-<%= @ingredients.each do |ingredient| %>
-<%= ingredient.name %>
-<% end %>
