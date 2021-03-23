@@ -26,11 +26,12 @@
 
 <%= @recipes.size %>
 <%= @ingredients.each do |ingredient| %>
-<%= simple_form_for(ingredient) do |f| %>
-<%= f.input :checked,
-input_html: {class: "ingredient-input checker"},
-label_html: {id: "ingredient-<%= ingredient.id %>"} %>
-<% end %>
+  <%= simple_form_for(ingredient) do |f| %>
+    <%= f.input :checked,
+    label: ingredient.name,
+    input_html: { class: 'ingredient-input checker' },
+    label_html: { class: 'ingredient-label'}  %>
+  <% end %>
 <% end %>
 <script type="text/javascript">
 const createTheme = document.getElementById('1');
