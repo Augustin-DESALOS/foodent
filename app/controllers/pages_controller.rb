@@ -142,8 +142,26 @@ class PagesController < ApplicationController
         @chosen_counter += prices.sum
       end
       @chosen_counter /= 4
+
+      # @recipe_names = []
+      # @breakfast_names = []
+      # @chosen_recipes.each do |recipe|
+      #   if recipe.breakfast == true
+      #     @breakfast_names << recipe.name
+      #     raise
+      #   else
+      #     @recipe_names << recipe.name
+      #   end
+      # end
+
+      @recipe_names = []
+      @chosen_recipes.each do |recipe|
+      @recipe_names << recipe.name
+      end
+      @recipes_names
     end
 
+    
 
     # @pictures2 = []
     # @sorted_recipes[@i-3][0].each do |recipe|
