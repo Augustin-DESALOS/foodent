@@ -209,9 +209,9 @@ class PagesController < ApplicationController
     #end
   end
 
-  def destroy_list
-    @list = List.find(params[:id])
-    @list.destroy
-    redirect_to root_path
-  end
+  # def destroy_list
+  #   @list = List.find(params[:id])
+  #   @list.destroy
+  #   redirect_to root_path
+  # end
 end
