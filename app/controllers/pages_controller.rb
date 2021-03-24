@@ -78,7 +78,7 @@ class PagesController < ApplicationController
 
     @pictures = []
     @breakfast_pictures = []
-    @sorted_recipes[@i-1][0].each do |recipe|
+    @sorted_recipes[@i-1][0].sort!.each do |recipe|
       if recipe.breakfast == true
         @breakfast_pictures << recipe.picture
       else
@@ -88,7 +88,7 @@ class PagesController < ApplicationController
 
     @pictures1 = []
     @breakfast_pictures1 = []
-    @sorted_recipes[@i-2][0].each do |recipe|
+    @sorted_recipes[@i-2][0].sort!.each do |recipe|
       if recipe.breakfast == true
         @breakfast_pictures1 << recipe.picture
       else
@@ -104,7 +104,7 @@ class PagesController < ApplicationController
 
     @pictures2 = []
     @breakfast_pictures2 = []
-    @sorted_recipes[@i-3][0].each do |recipe|
+    @sorted_recipes[@i-3][0].sort!.each do |recipe|
       if recipe.breakfast == true
         @breakfast_pictures2 << recipe.picture
       else
