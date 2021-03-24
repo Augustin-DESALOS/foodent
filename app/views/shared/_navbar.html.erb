@@ -18,7 +18,9 @@
           <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Mon profil",my_list_path(list_waiting: "true"), class: "dropdown-item" %>
+            <% if current_user.lists.last %>
               <%= link_to "Mes courses",shopping_list_path(current_user.lists.last), class: "dropdown-item" %>
+            <% end %>
             <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
