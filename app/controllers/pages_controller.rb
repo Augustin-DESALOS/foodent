@@ -34,9 +34,9 @@ class PagesController < ApplicationController
     # end
     # @counter2 /= 4
 
-    
+
     # all_recipes = []
-    # 20.times do 
+    # 20.times do
     #   counter = 0
     # list = Recipe.all.sample(14)
     # list.each do |recipe|
@@ -78,7 +78,7 @@ class PagesController < ApplicationController
 
     @pictures = []
     @breakfast_pictures = []
-    @sorted_recipes[@i-1][0].each do |recipe|
+    @sorted_recipes[@i-1][0].sort!.each do |recipe|
       if recipe.breakfast == true
         @breakfast_pictures << recipe.picture
       else
@@ -88,7 +88,7 @@ class PagesController < ApplicationController
 
     @pictures1 = []
     @breakfast_pictures1 = []
-    @sorted_recipes[@i-2][0].each do |recipe|
+    @sorted_recipes[@i-2][0].sort!.each do |recipe|
       if recipe.breakfast == true
         @breakfast_pictures1 << recipe.picture
       else
@@ -104,7 +104,7 @@ class PagesController < ApplicationController
 
     @pictures2 = []
     @breakfast_pictures2 = []
-    @sorted_recipes[@i-3][0].each do |recipe|
+    @sorted_recipes[@i-3][0].sort!.each do |recipe|
       if recipe.breakfast == true
         @breakfast_pictures2 << recipe.picture
       else
@@ -123,6 +123,7 @@ class PagesController < ApplicationController
     end
 
     def my_list
+      @list_waiting = params[:list_waiting]
       @chosen_list = current_user.lists.last
       @chosen_recipes = @chosen_list.recipes
       @chosen_breakfast = []
@@ -158,7 +159,7 @@ class PagesController < ApplicationController
     #   @price_list_1 += prices.sum
     # end
     # @price_list_1 /= 4
-    
+
 
 
     # @array_price_list = []
@@ -173,7 +174,7 @@ class PagesController < ApplicationController
     #   @list_price /= 4
     #   @array_price_list << @list_price
     # end
-  
+
     # @array = []
     # @list = Recipe.all.sample(14)
     # @list.each do |recipe|
@@ -200,11 +201,17 @@ class PagesController < ApplicationController
 
 
     #@price = current_user.budget
-    #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7  
-      #@list = 
+    #if Date.today.yday - (current_user.lists.last.created_at.yday) > 7
+      #@list =
       #@list =
       #@list =
     #else
     #end
   end
+
+  # def destroy_list
+  #   @list = List.find(params[:id])
+  #   @list.destroy
+  #   redirect_to root_path
+  # end
 end

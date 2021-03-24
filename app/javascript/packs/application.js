@@ -24,12 +24,15 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import {initShoppingList} from '../plugins/shopping_list'
+import {shoppingList, toggleButton} from '../plugins/shopping_list'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  initShoppingList();
+  if (window.location.pathname.includes("shopping_list")) {
+    shoppingList();
+  }
+
   // Call your functions here, e.g:
   // initSelect2();
   $('#range').on("input", function() {

@@ -20,7 +20,7 @@
 #     # Je récupère le nom de l'ingrédient
 #     ingredient = meal["strIngredient#{i}"] # "Aubergine"
 #     # Si y'a un nom
-#     if !ingredient.blank? 
+#     if !ingredient.blank?
 #       # Je regarde si je connais cet ingrédient en DB
 #       db_ingredient = Ingredient.find_by_name(ingredient)
 #       # Si je le connais pas
@@ -30,7 +30,7 @@
 #           name: ingredient
 #         )
 #       end
-      
+
 #       ri = RecipeIngredient.create(
 #         recipe: recipe,
 #         ingredient: db_ingredient,
@@ -48,7 +48,7 @@ require "nokogiri"
 
 ListRecipe.destroy_all
 RecipeIngredient.destroy_all
-Ingredient.destroy_all
+ListIngredient.destroy_all
 Recipe.destroy_all
 
 
@@ -63,7 +63,7 @@ doc.search(".recipe-card").first(60).each do |element|
   recipe_url = element.search(".recipe-card-link").first.attributes["href"].value
   rating = element.search(".recipe-card__rating__value").first.text.strip
   prep_time = element.search(".recipe-card__duration__value").first.text.strip
-  
+
   recipe_html = open(URI.escape(recipe_url)).read
   recipe_doc = Nokogiri::HTML(recipe_html, nil, "utf-8")
 
@@ -73,7 +73,7 @@ doc.search(".recipe-card").first(60).each do |element|
   p picture = recipe_doc.search("#recipe-picture-print").first.attributes["src"].value
   recipe = Recipe.create(name: name, description: description, picture: picture, rating: rating, cooking_time: prep_time)
   recipe_url
-  
+
   recipe_doc.search(".ingredient-list__ingredient-group li").each do |ingredient|
     ingredient_name =  ingredient.search(".item__ingredient .ingredient-name").first.text.strip
     ingredient_quantity = ingredient.search(".item__quantity .quantity").first.text.strip
@@ -85,10 +85,10 @@ doc.search(".recipe-card").first(60).each do |element|
       # p ingredient_name
       html = open(URI.escape("https://www.carrefour.fr/s?q=#{ingredient_name.parameterize}")).read
       doc_price = Nokogiri::HTML(html, nil, "utf-8")
-      
+
       scrap_ingredient = doc_price.search(".ds-product-card--vertical.ds-product-card:not(.ds-product-card--shimmer)").first
-      
-      
+
+
       if scrap_ingredient.nil?
         ingredient_price = 100
       else
@@ -105,7 +105,7 @@ doc.search(".recipe-card").first(60).each do |element|
           # price: ( ingredient_price / rand(1..2) )
         )
       end
-      
+
       ri = RecipeIngredient.create(
         recipe: recipe,
         ingredient: db_ingredient,
