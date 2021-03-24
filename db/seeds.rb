@@ -168,7 +168,7 @@ recipepancakenutellat3 = RecipeIngredient.create(recipe: pancakenutella, ingredi
 recipepancakenutellat4 = RecipeIngredient.create(recipe: pancakenutella, ingredient: nutella, quantity: "100", unit: "gr")
 
 veganbreakfast = Recipe.create(name: "Le vegan breakfast", description: "Cultivé de père en fils sur l'une des terres les plus banales de poitou-charentes, dégustez une herbe de qualité ferti-ligiène.. Bon appétit !!!", picture: "veganbreakfast.jpg", rating: 4, cooking_time: "15 min", breakfast: true)
-herbebanal = Ingredient.create(name: "Herbe d'origin protégée", price: 4)
+herbebanal = Ingredient.create(name: "Herbe d'origine protégée", price: 4)
 terre = Ingredient.create(name: "Terre de qualité ferti-ligiène", price: 12)
 recipevegan = RecipeIngredient.create(recipe: veganbreakfast, ingredient: herbebanal, quantity: "200", unit: "gr")
 recipevegan1 = RecipeIngredient.create(recipe: veganbreakfast, ingredient: terre, quantity: "300", unit: "gr")
