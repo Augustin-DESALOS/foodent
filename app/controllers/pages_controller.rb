@@ -123,6 +123,7 @@ class PagesController < ApplicationController
     end
 
     def my_list
+      @list_waiting = params[:list_waiting]
       @chosen_list = current_user.lists.last
       @chosen_recipes = @chosen_list.recipes
       @chosen_breakfast = []
@@ -206,5 +207,11 @@ class PagesController < ApplicationController
       #@list =
     #else
     #end
+  end
+
+  def destroy_list
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to root_path
   end
 end

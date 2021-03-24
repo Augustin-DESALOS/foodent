@@ -7,35 +7,23 @@
             <h1>liste de courses</h1>
           </ul>
           <div class="todo-list">
-            <% @list_ingredients.each do |list_ingredient| %>
-            <div class="todo-item" data-id="<%= list_ingredient.id %>">
+            <% @quantity_ingredients.each do |name, quantity_unit| %>
+              <% ingredient = Ingredient.find_by(name: name) %>
+              <% list_ingredient = ListIngredient.find_by(ingredient: ingredient, list: @list) %>
+              <div class="todo-item" data-id="<%= list_ingredient.id %>">
    <%= simple_form_for(list_ingredient, method: :patch, url: list_ingredient_path(list_ingredient)) do |f| %>
     <%= f.input :checked,
-    label: list_ingredient.ingredient.name,
+    label: "#{ingredient.name} #{quantity_unit[0] == 0 ? '' : quantity_unit[0] } #{quantity_unit[1]}",
     input_html: { class: 'ingredient-input checker', autocomplete: "checked" },
     label_html: { class: 'ingredient-label'}  %>
     <%= f.button :submit, 'boutton', class: "d-none ingredient-button" %>
   <% end %>
 </div>
 <% end %>
+<%= link_to "Fini", destroy_list_path(@list), method: :delete, class: "btn btn-success d-none", id: "list-finish" %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script type="text/javascript">
-const inputs = document.querySelectorAll('.ingredient-input');
-inputs.forEach(function(input){
-  input.addEventListener("click", () => {
-    const label = input.parentNode.querySelector('.ingredient-label');
-    const data = input.parentNode.parentNode.parentNode.parentNode;
-    const id = data.dataset.id;
-    const form = data.querySelector('form');
-    const button = form.querySelector('.ingredient-button');
-    label.classList.toggle('ingredient-check');
-    button.click();
-  });
-});
-
-</script>
