@@ -59,7 +59,11 @@
       </div>
       <div class="d-flex justify-content-between mt-3 align-items-center">
         <p class="price my-0">PRIX: <%= @chosen_counter/100.to_f %><%= "€" %></p>
-         <%= link_to "liste de courses", create_list_ingredients_path(@chosen_list) %>
+        <% if @list_waiting.present? %>
+        <%= link_to "Voir ma liste de course", shopping_list_path(current_user.lists.last) %>
+        <% else %>
+         <%= link_to "Générer ma liste de course", create_list_ingredients_path(@chosen_list) %>
+        <% end %>
       </div>
     </div>
   </div>
