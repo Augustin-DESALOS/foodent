@@ -2,11 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    if session[:visits] == 2
-      session[:visits] = 0
-    else
-      session[:visits] += 1
-    end
+    # if session[:visits] == 2
+    #   session[:visits] = 0
+    # else
+    #   session[:visits] += 1
+    # end
   end
 
   def dashboard
