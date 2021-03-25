@@ -1,5 +1,5 @@
-meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
-meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_product_name: "Foodent"
+meta_title: "Foodent - Food app pour étudients"
+meta_description: "Ne laissez pas votre budget vous controller, changez de vie et controller votre budget avec Foodent"
+meta_image: "foodent.jpg" # should exist in `app/assets/images/`
+twitter_account: "@lewagon_twitter_account"   # required for Twitter Cards
