@@ -1,10 +1,11 @@
 // Create a "close" button and append it to each list item
 function toggleButton(inputs, inputsChecked, finishButton) {
-    if (inputs.length === inputsChecked.length) {
-      finishButton.classList.remove('d-none');
-    } else if (inputs.length !== inputsChecked.length) {
-      finishButton.classList.add('d-none');
-    }
+    // if (inputs.length === inputsChecked.length) {
+    //   finishButton.classList.remove('d-none');
+    // }
+    // else if (inputs.length !== inputsChecked.length) {
+    //   finishButton.classList.add('d-none');
+    // }
 }
 
 const shoppingList = () => {
