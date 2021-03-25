@@ -9,7 +9,7 @@
     </div>
   </form>
   <output for="range" class="output"></output>
-
+<% if session[:visits] == 0 %>
 <div class="row pop-up">
   <div class="box small-6 large-centered">
     <a href="#" class="close-button">&#10006;</a>
@@ -21,4 +21,6 @@
     </div>
   </div>
 </div>
-
+<% else %>
+<% end %>
+</div>
