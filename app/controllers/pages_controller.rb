@@ -2,7 +2,13 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    if session[:visits] == 2
+      session[:visits] = 0
+    else
+      session[:visits] += 1
+    end
   end
+
   def dashboard
     @budget = params[:budget]
 
@@ -161,7 +167,7 @@ class PagesController < ApplicationController
       @recipes_names
     end
 
-    
+
 
     # @pictures2 = []
     # @sorted_recipes[@i-3][0].each do |recipe|
